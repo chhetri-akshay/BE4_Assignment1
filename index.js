@@ -35,7 +35,7 @@ app.post("/books", async (req, res) => {
             res.status(404).json({error: "Books not found"})
         }
     }catch(error){
-        res.status(500).json({error: "Error occured while fetching database."})
+        res.status(500).json({error: "Error occured while fetching database.", error})
     }
 })
 
