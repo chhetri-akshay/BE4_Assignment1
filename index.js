@@ -34,9 +34,10 @@ app.post("/books", async (req, res) => {
         }  else {
             res.status(404).json({error: "Books not found"})
         }
-    }catch(error){
-        res.status(500).json({error: "Error occured while fetching database.", error})
-    }
+    }catch (error) {
+        console.error("Error saving book:", error); // Log the entire error object
+        res.status(500).json({ error: "Error occurred while saving book.", details: error.message }); // Include the error message
+      }
 })
 
 app.get("/books", async(req, res) => {
