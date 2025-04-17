@@ -76,7 +76,7 @@ app.get("/books/:title", async (req, res) => {
 
 async function getBookByAuthor(authorName){
     try{
-        const selectBook = await bookList.findOne({author: authorName})
+        const selectBook = await bookList.find({author: authorName})
         return selectBook
     }catch(error){
         throw(error)
