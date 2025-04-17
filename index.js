@@ -18,7 +18,7 @@ initializeDatabase()
 
 async function createBooks(newBook){
     try{
-        const Books = new BookList(newBook)
+        const Books = new bookList(newBook)
         const saveBooks = await Books.save()
         return saveBooks
     }catch(error){
