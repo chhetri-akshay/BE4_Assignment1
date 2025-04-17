@@ -27,6 +27,8 @@ const BookSchema = new mongoose.Schema({
     rating: {
         type: Number,
         required: true,
+        min: 1,
+        max: 10
     },
     summary: {
         type: String,
@@ -37,7 +39,7 @@ const BookSchema = new mongoose.Schema({
         required: true,
     },
 },
-{timestamp: true}
+{timestamps: true}
 )
 
 const bookList = mongoose.model("bookList", BookSchema)
